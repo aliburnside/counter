@@ -1,15 +1,20 @@
-import './App.css';
 import React, { useState } from 'react';
+
+import './App.css';
+
+let clickTrack = 0;
 
 function App() {
   const [count, setCount] = useState(0);
 
   const addOne = () => {
+    clickTrack++;
     setCount(count + 1);
   };
 
   const minusOne = () => {
     setCount(count - 1);
+    clickTrack++;
   };
 
   return (
@@ -23,6 +28,7 @@ function App() {
             <span>{count}</span>
             <button onClick={addOne}>+</button>
           </div>
+          <p className="click-track">{clickTrack} clicks have been made</p>
         </div>
       </header>
     </div>
