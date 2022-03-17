@@ -1,6 +1,13 @@
 import './App.css';
+import React, { useState } from 'react';
 
 function App() {
+  const [count, setCount] = useState(0);
+
+  const addOne = () => {
+    setCount(count + 1);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -9,8 +16,8 @@ function App() {
           <p>Increment and Decrement</p>
           <div className="counter">
             <button>-</button>
-            <span>0</span>
-            <button>+</button>
+            <span>{count}</span>
+            <button onClick={addOne}>+</button>
           </div>
         </div>
       </header>
