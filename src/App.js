@@ -8,6 +8,10 @@ function App() {
     setCount(count + 1);
   };
 
+  const minusOne = () => {
+    setCount(count - 1);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -15,7 +19,7 @@ function App() {
           <h1>Counter</h1>
           <p>Increment and Decrement</p>
           <div className="counter">
-            <button>-</button>
+            <button onClick={minusOne}>-</button>
             <span>{count}</span>
             <button onClick={addOne}>+</button>
           </div>
